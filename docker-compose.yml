@@ -9,7 +9,7 @@ services:
       - "8012:8002"
     volumes:
       - ./model_repository:/models
-      - ./assets:/assets
+      - ./assets:/opt/tritonserver/assets
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
-      - IMAGES_ROOT_DIR='/assets'
+      - IMAGES_ROOT_DIR=/opt/tritonserver/assets
