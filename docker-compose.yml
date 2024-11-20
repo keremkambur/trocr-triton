@@ -1,0 +1,15 @@
+version: '3'
+services:
+  triton:
+    build: .
+    runtime: nvidia
+    ports:
+      - "8010:8000"
+      - "8011:8001"
+      - "8012:8002"
+    volumes:
+      - ./model_repository:/models
+      - ./assets:/assets
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - IMAGES_ROOT_DIR='/assets'
